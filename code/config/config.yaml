@@ -3,9 +3,12 @@
 # - gpt-4o-mini
 # - gemini-1.5-flash
 # - gemini-1.5-pro
-# - llama3-8b-8192
+# - llama-3.1-8b-instant
+# - llama-3.3-70b-versatile
+# - qwen/qwen3-32b
+# - openai/gpt-oss-20b
 
-llm: "gpt-4o-mini"
+llm: "openai/gpt-oss-20b"
 reasoning_strategies:
   CoT: |
     Use this systematic approach to provide your response:

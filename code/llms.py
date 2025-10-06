@@ -12,7 +12,10 @@ available_models = [
     "gpt-4o-mini",
     "gemini-1.5-flash",
     "gemini-1.5-pro",
-    "llama3-8b-8192",
+    "llama-3.1-8b-instant",
+    "llama-3.3-70b-versatile",
+    "qwen/qwen3-32b",
+    "openai/gpt-oss-20b",
 ]
 
 
@@ -33,9 +36,14 @@ def get_llm(model: str):
             api_key=os.getenv("GOOGLE_API_KEY"),
         )
 
-    elif model == "llama3-8b-8192":
+    elif model in [
+        "llama-3.1-8b-instant",
+        "llama-3.3-70b-versatile",
+        "qwen/qwen3-32b",
+        "openai/gpt-oss-20b",
+    ]:
         return ChatGroq(
-            model_name="llama3-8b-8192",
+            model_name=model,
             temperature=0.0,
             api_key=os.getenv("GROQ_API_KEY"),
         )
